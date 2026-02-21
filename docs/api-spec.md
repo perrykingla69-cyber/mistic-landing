@@ -63,3 +63,13 @@ Base URL: `/api/v1`
 - `GET /admin/reports/revenue`
 - `GET /admin/reports/commissions`
 - `GET /admin/audit/events`
+
+
+## AI Apps (Local)
+- `GET /ai-apps/catalog`
+- `POST /ai-apps/run`
+- `GET /ai-apps/status/:app`
+
+## Commission Rules
+- General marketplace split: 70/30 (seller/platform).
+- Merch split: 50/50.

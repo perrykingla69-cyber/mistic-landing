@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  backend:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3001:3001"
+
+  tgi:
+    image: ghcr.io/huggingface/text-generation-inference:latest
+    environment:
+      - MODEL_ID=TinyLlama/TinyLlama-1.1B-Chat-v1.0
+    ports:
+      - "8080:80"
+
+  whisper:
+    image: ghcr.io/openai/whisper:latest
+    profiles: ["optional"]
+
+  gradio-transformers:
+    image: python:3.11
+    working_dir: /app
+    volumes:
+      - ./apps/gradio:/app
+    command: sh -c "pip install transformers gradio torch && python app.py"
+    ports:
+      - "7860:7860"

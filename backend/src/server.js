@@ -8,6 +8,7 @@ import productRoutes from './routes/products.js';
 import legalRoutes from './routes/legal.js';
 import gamificationRoutes from './routes/gamification.js';
 import communityRoutes from './routes/community.js';
+import aiAppsRoutes from './routes/ai-apps.js';
 
 const app = express();
 app.use(cors());
@@ -25,6 +26,7 @@ app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/legal', legalRoutes);
 app.use('/api/v1/gamification', gamificationRoutes);
 app.use('/api/v1/community', communityRoutes);
+app.use('/api/v1/ai-apps', aiAppsRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

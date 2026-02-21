@@ -24,3 +24,5 @@ Ecosistema empresarial creativo para artistas, emprendedores y empresas.
 - `docs/roadmap-mvp.md`
 - `docs/roadmap.md`
 - `docs/deployment.md`
+
+- `docs/ai-local-apps.md`

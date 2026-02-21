@@ -22,6 +22,11 @@ Arquitectura modular por dominios (estilo modular monolith evolutivo a microserv
   - PostgreSQL (datos transaccionales)
   - Redis (cache, sesiones, rankings)
   - Object Storage (media/documentos)
+- **AI Apps Local Runtime**:
+  - Hugging Face TGI
+  - Transformers + Gradio
+  - Whisper ASR
+  - Diffusers
 - **Integrations**:
   - Stripe/MercadoPago
   - SAT/facturación (proveedor autorizado)
