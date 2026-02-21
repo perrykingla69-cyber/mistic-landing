@@ -1,0 +1,38 @@
+<html>
+<body>
+<h2>User: {{user.username}}</h2>
+<p>Tokens: {{user.tokens}}</p>
+<p>Reputation: {{user.reputation}}</p>
+
+<h3>Reward</h3>
+<form action="/reward" method="post">
+<input type="hidden" name="user" value="{{user.username}}"/>
+<select name="activity">
+<option value="work">Work</option>
+<option value="learn">Learn</option>
+<option value="play">Play</option>
+</select>
+<button type="submit">Earn</button>
+</form>
+
+<h3>Buy Tokens</h3>
+<form action="/buy" method="post">
+<input type="hidden" name="user" value="{{user.username}}"/>
+<input name="amount" placeholder="Amount"/>
+<button type="submit">Buy</button>
+</form>
+
+<h3>Spend Tokens</h3>
+<form action="/spend" method="post">
+<input type="hidden" name="user" value="{{user.username}}"/>
+<input name="amount" placeholder="Amount"/>
+<button type="submit">Spend</button>
+</form>
+
+<h3>Impact Stats</h3>
+<p>Total Supply: {{treasury.total_supply}}</p>
+<p>Burned: {{treasury.burned}}</p>
+<p>Social Fund: {{treasury.social_fund}}</p>
+
+</body>
+</html>
