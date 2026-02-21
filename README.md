@@ -1,25 +1,26 @@
 # Sonora Mystic Corp
 
-Plataforma web integral para emprendedores, artistas, músicos y empresas creativas.
+Ecosistema empresarial creativo para artistas, emprendedores y empresas.
 
-## Entregables incluidos
+## Qué se reforzó en esta iteración
 
-- Arquitectura de sistema: `docs/architecture.md`
-- Estructura de carpetas: `docs/architecture.md`
-- APIs (REST): `docs/api-spec.md`
-- Modelos de datos: `docs/data-models.md`
-- UI básica (landing): `index.html`
-- Roadmap MVP: `docs/roadmap-mvp.md`
+- Se agregó más identidad de marca y **soul** en la landing.
+- Se creó un scaffold backend/frontend alineado con la estructura propuesta.
+- Se añadieron documentos prácticos para API resumida, roadmap y deployment.
 
-## Stack objetivo
+## Estructura actual
 
-- Frontend: React + TailwindCSS + Three.js
-- Backend: Node.js + Express
-- Base de datos: PostgreSQL
-- Auth: JWT + RBAC
-- Pagos: Stripe / MercadoPago
-- Infraestructura: cloud escalable por microservicios modulares
+- `backend/` (Express por rutas + modelos base)
+- `frontend/` (React con componentes/páginas base)
+- `docs/` (arquitectura, API, modelos de datos, roadmap y deployment)
+- `index.html` (landing visual institucional)
 
-## Cómo visualizar la UI básica
+## Documentación
 
-Abre `index.html` directamente en tu navegador.
+- `docs/architecture.md`
+- `docs/api-spec.md`
+- `docs/api.md`
+- `docs/data-models.md`
+- `docs/roadmap-mvp.md`
+- `docs/roadmap.md`
+- `docs/deployment.md`
