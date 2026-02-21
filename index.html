@@ -1,134 +1,212 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mystic - Software Contable Integral</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonora Mystic Corp | Ecosistema Empresarial Creativo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mystic: {
+              900: '#0B1021',
+              800: '#111936',
+              700: '#18244D',
+              500: '#355CFF',
+              400: '#5C7BFF'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 40px rgba(92, 123, 255, 0.35)'
+          }
+        }
+      }
+    };
+  </script>
   <style>
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      background: radial-gradient(circle at 20% -20%, #1f2d63, #0b1021 45%);
     }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    nav {
-      background-color: #34495e;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 500;
-    }
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .features {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .feature-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 2rem;
-      text-align: center;
-    }
-    .feature-card h3 {
-      color: #2c3e50;
-    }
-    .cta {
-      background-color: #27ae60;
-      color: white;
-      padding: 3rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Mystic - Software Contable Integral</h1>
-    <p>Solución completa para contadores profesionales</p>
+<body class="text-slate-100">
+  <canvas id="metaverse-canvas" class="fixed inset-0 -z-10 opacity-40"></canvas>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-mystic-900/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div>
+        <p class="text-lg font-bold">Sonora Mystic Corp</p>
+        <p class="text-xs text-slate-300">Orden + Creatividad + Legalidad + Futuro + Soul</p>
+      </div>
+      <div class="hidden gap-5 text-sm md:flex">
+        <a href="#ecosistema" class="hover:text-mystic-400">Ecosistema</a>
+        <a href="#membresias" class="hover:text-mystic-400">Membresías</a>
+        <a href="#modulos" class="hover:text-mystic-400">Módulos</a>
+        <a href="#roadmap" class="hover:text-mystic-400">Roadmap</a>
+      </div>
+      <a href="#registro" class="rounded-xl bg-mystic-500 px-4 py-2 text-sm font-semibold hover:bg-mystic-400">Crear cuenta</a>
+    </nav>
   </header>
-  
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#características">Características</a>
-    <a href="#precios">Precios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  
-  <section class="hero">
-    <h2>Automatización Contable Inteligente</h2>
-    <p>Gestiona tus clientes, facturación, impuestos y reportes financieros con nuestra plataforma integral</p>
-  </section>
-  
-  <section class="features">
-    <h2>Características Principales</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Facturación Electrónica</h3>
-        <p>Emite facturas electrónicas válidas ante el SAT con validación automática de datos fiscales</p>
+
+  <main>
+    <section id="ecosistema" class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-20 lg:grid-cols-2">
+      <div>
+        <p class="mb-3 inline-block rounded-full bg-mystic-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-mystic-400">Learn · Work · Play to Earn</p>
+        <h1 class="text-4xl font-black leading-tight sm:text-5xl">Plataforma operativa con soul para marcas, artistas y negocios creativos.</h1>
+        <p class="mt-5 max-w-2xl text-slate-300">Sonora Mystic Corp integra consultoría, tecnología, legalidad, marketing, administración, comunidad, marketplace, gamificación y metaverso 3D en una sola experiencia simple y escalable.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#registro" class="rounded-xl bg-mystic-500 px-6 py-3 font-semibold shadow-glow hover:bg-mystic-400">Empezar ahora</a>
+          <a href="#video" class="rounded-xl border border-white/25 px-6 py-3 font-semibold hover:border-mystic-400">Ver video principal</a>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Contabilidad Integrada</h3>
-        <p>Registro automático de transacciones, balances generales y estados financieros actualizados</p>
+      <div class="glass rounded-2xl p-6">
+        <h2 class="text-xl font-bold">Usuarios objetivo</h2>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-200">
+          <p>• Artistas y músicos</p><p>• Estudios y escuelas</p>
+          <p>• Freelancers</p><p>• Tiendas y PYMES</p>
+          <p>• Emprendedores</p><p>• Empresas físicas/morales</p>
+        </div>
+        <p class="mt-5 text-sm text-slate-300">Diseñada para personas sin conocimientos técnicos, fiscales o legales.</p>
       </div>
-      <div class="feature-card">
-        <h3>Declaraciones Fiscales</h3>
-        <p>Preparación y envío de declaraciones de impuestos con cálculos automáticos y validaciones</p>
+    </section>
+
+
+    <section id="soul" class="mx-auto max-w-7xl px-6 py-8">
+      <div class="glass rounded-2xl p-6">
+        <h2 class="text-2xl font-bold">El componente Soul</h2>
+        <p class="mt-3 text-slate-300">No solo organizamos procesos: preservamos la identidad artística de cada marca con narrativa, estética y propósito comunitario.</p>
       </div>
-      <div class="feature-card">
-        <h3>Control de Clientes</h3>
-        <p>Administra la información de múltiples clientes, documentos y fechas de vencimiento</p>
+    </section>
+
+    <section id="video" class="mx-auto max-w-7xl px-6 pb-16">
+      <div class="glass rounded-2xl p-4">
+        <div class="aspect-video w-full rounded-xl bg-slate-950/70 p-8">
+          <div class="flex h-full items-center justify-center rounded-xl border border-dashed border-slate-500 text-center text-slate-300">
+            Video institucional principal (demo): visión, servicios y registro guiado.
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Reportes Personalizados</h3>
-        <p>Genera reportes detallados sobre movimientos, balances y análisis financieros</p>
+    </section>
+
+    <section id="membresias" class="mx-auto max-w-7xl px-6 py-16">
+      <h2 class="text-3xl font-bold">Sistema de Membresías</h2>
+      <p class="mt-2 text-slate-300">Pago mensual con escalamiento de capacidades.</p>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <article class="glass rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Básico</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300"><li>Perfil público</li><li>Comunidad</li><li>Cursos esenciales</li></ul>
+        </article>
+        <article class="rounded-2xl border border-mystic-400 bg-mystic-500/15 p-6 shadow-glow">
+          <h3 class="text-xl font-bold">Pro</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200"><li>Marketing interno</li><li>Promociones</li><li>Administración básica</li><li>Gamificación</li></ul>
+        </article>
+        <article class="glass rounded-2xl p-6">
+          <h3 class="text-xl font-bold">Elite</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300"><li>Monetización completa</li><li>Marketplace activo (70/30 general, merch 50/50)</li><li>Mundo 3D + conciertos</li><li>Prioridad y exclusividad</li></ul>
+        </article>
       </div>
-      <div class="feature-card">
-        <h3>Seguridad y Copias</h3>
-        <p>Cifrado de datos, copias de seguridad automáticas y cumplimiento normativo</p>
+    </section>
+
+    <section id="modulos" class="mx-auto max-w-7xl px-6 py-16">
+      <h2 class="text-3xl font-bold">Módulos Core del Ecosistema</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Perfiles 360</h3><p class="mt-2 text-sm text-slate-300">Marca, proyecto, empresa y perfil artístico con métricas, redes y documentos.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Legal/Admin guiado</h3><p class="mt-2 text-sm text-slate-300">Alta fiscal, régimen, facturación, contratos, marca y cumplimiento en lenguaje simple.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Integración A.C.</h3><p class="mt-2 text-sm text-slate-300">Donaciones, proyectos sociales, beneficios y transparencia.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Marketplace</h3><p class="mt-2 text-sm text-slate-300">Música, merch, servicios, cursos, entradas y productos físicos.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Logística y stock</h3><p class="mt-2 text-sm text-slate-300">Inventario, proveedores, dropshipping, oficina física y tiempos de entrega.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Metaverso 3D</h3><p class="mt-2 text-sm text-slate-300">Conciertos, exhibiciones, eventos y branding con avatar por membresía.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Gamificación</h3><p class="mt-2 text-sm text-slate-300">Misiones, puntos, logros, rankings y recompensas internas (off-chain).</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Marketing interno</h3><p class="mt-2 text-sm text-slate-300">Afiliados, descuentos, cross-selling y campañas segmentadas.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Comunidad + Admin</h3><p class="mt-2 text-sm text-slate-300">Chats, foros, mentorías y dashboard con auditoría, pagos y reportes.</p></div>
       </div>
-    </div>
-  </section>
-  
-  <section class="cta">
-    <h2>Comienza a Simplificar tu Trabajo Contable Hoy</h2>
-    <p>Contacta con nosotros para una demostración personalizada de Mystic</p>
-    <button style="background-color: #e74c3c; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 1rem;">Solicitar Demo</button>
-  </section>
-  
-  <footer>
-    <p>&copy; 2026 Mystic. Todos los derechos reservados.</p>
-    <p>Diseñado para contadores profesionales</p>
+    </section>
+
+
+    <section id="ai-local" class="mx-auto max-w-7xl px-6 py-16">
+      <h2 class="text-3xl font-bold">Apps Open Source (Hugging Face) para correr local</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Text Generation Inference</h3><p class="mt-2 text-sm text-slate-300">Inferencia local de LLMs open source para asistentes internos, copy y soporte.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Transformers + Gradio</h3><p class="mt-2 text-sm text-slate-300">Micro-apps para clasificación de contenido, resumen y workflows de comunidad.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Whisper / ASR</h3><p class="mt-2 text-sm text-slate-300">Transcripción de demos, mentorías y conciertos para archivo y analytics.</p></div>
+        <div class="glass rounded-xl p-4"><h3 class="font-semibold">Diffusers</h3><p class="mt-2 text-sm text-slate-300">Generación visual para campañas y assets creativos de marketplace.</p></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="mx-auto max-w-7xl px-6 py-16">
+      <div class="glass rounded-2xl p-8">
+        <h2 class="text-3xl font-bold">Roadmap MVP (12 meses)</h2>
+        <ol class="mt-5 space-y-3 text-slate-300">
+          <li><strong>Fase 1:</strong> Landing + auth + perfiles + membresías + comunidad base.</li>
+          <li><strong>Fase 2:</strong> Módulo legal/admin + marketing interno + gamificación inicial.</li>
+          <li><strong>Fase 3:</strong> Marketplace + logística + comisiones automáticas + panel admin.</li>
+          <li><strong>Fase 4:</strong> Metaverso 3D, conciertos virtuales y expansión empresarial.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="registro" class="mx-auto max-w-7xl px-6 pb-20">
+      <div class="rounded-2xl bg-mystic-500 px-8 py-10 text-mystic-900">
+        <h2 class="text-3xl font-extrabold">Registro temprano</h2>
+        <p class="mt-2 max-w-3xl">Únete al ecosistema que convierte creatividad en empresa sostenible. Modelo guiado para crecer con orden, legalidad y tecnología.</p>
+        <form class="mt-6 grid gap-3 sm:grid-cols-3">
+          <input class="rounded-xl px-3 py-2" placeholder="Nombre / empresa" />
+          <input class="rounded-xl px-3 py-2" type="email" placeholder="Email" />
+          <button class="rounded-xl bg-mystic-900 px-4 py-2 font-semibold text-white">Solicitar onboarding</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-400">
+    © 2026 Sonora Mystic Corp · Ecosistema empresarial creativo integral.
   </footer>
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+    const canvas = document.getElementById('metaverse-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 6;
+
+    const geometry = new THREE.TorusKnotGeometry(1.2, 0.35, 120, 18);
+    const material = new THREE.MeshStandardMaterial({ color: '#5C7BFF', metalness: 0.7, roughness: 0.2 });
+    const knot = new THREE.Mesh(geometry, material);
+    scene.add(knot);
+
+    const lightA = new THREE.PointLight(0xffffff, 0.9);
+    lightA.position.set(4, 4, 4);
+    scene.add(lightA);
+
+    const lightB = new THREE.AmbientLight(0x6b7cff, 0.4);
+    scene.add(lightB);
+
+    const resize = () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    };
+
+    const animate = () => {
+      knot.rotation.x += 0.003;
+      knot.rotation.y += 0.004;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+  </script>
 </body>
 </html>
