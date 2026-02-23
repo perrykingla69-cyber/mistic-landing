@@ -1,1 +1,6 @@
-Nothing needs to be added to .gitignore since only a source file (index.html) was added and there are no build artifacts, dependencies, or temporary files in the changes.
+node_modules/
+**/node_modules/
+dist/
+.env
+npm-debug.log*
+.DS_Store
