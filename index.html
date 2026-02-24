@@ -3,132 +3,338 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mystic - Software Contable Integral</title>
+  <title>Plataforma Mística | Proyecto Completo</title>
   <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #8b5cf6;
+      --accent: #22d3ee;
+      --success: #10b981;
+      --warning: #f59e0b;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.6;
     }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
     header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 2rem;
-      text-align: center;
+      padding: 3.5rem 0 2rem;
+      border-bottom: 1px solid #1e293b;
+      background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.25), transparent 40%);
     }
-    nav {
-      background-color: #34495e;
-      padding: 1rem;
-      text-align: center;
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #dbeafe;
+      background: rgba(34, 211, 238, 0.18);
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      margin-bottom: 0.9rem;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 500;
-    }
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .features {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .feature-grid {
+
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 0.8rem; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    h2 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); margin-top: 2.8rem; }
+
+    .subtitle { color: var(--muted); max-width: 800px; }
+
+    .owner {
+      margin-top: 1.2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      gap: 0.4rem;
+      color: #cbd5e1;
     }
-    .feature-card {
-      background: white;
+
+    section { padding: 1.4rem 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: rgba(31, 41, 55, 0.75);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .card strong { color: #f8fafc; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.8rem;
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px solid #334155;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.8rem;
+      border-bottom: 1px solid #334155;
+    }
+
+    th {
+      background: rgba(139, 92, 246, 0.2);
+      color: #e9d5ff;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .total {
+      font-weight: 700;
+      color: #bef264;
+    }
+
+    .ascii {
+      white-space: pre;
+      overflow-x: auto;
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 1rem;
+      color: #c7d2fe;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.78rem;
+    }
+
+    ul { padding-left: 1.2rem; }
+    li { margin: 0.35rem 0; }
+
+    .kpi {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.6rem 0.85rem;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 2rem;
-      text-align: center;
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      background: rgba(16, 185, 129, 0.14);
+      color: #6ee7b7;
+      font-weight: 600;
     }
-    .feature-card h3 {
-      color: #2c3e50;
+
+    .timeline {
+      border-left: 2px solid var(--accent);
+      margin: 1rem 0;
+      padding-left: 1rem;
     }
-    .cta {
-      background-color: #27ae60;
-      color: white;
-      padding: 3rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
+
+    .timeline-item { margin: 1rem 0; }
+    .time { color: #67e8f9; font-weight: 700; }
+
     footer {
-      background-color: #2c3e50;
-      color: white;
+      margin-top: 2rem;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
       text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      padding: 1.4rem 0 2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Mystic - Software Contable Integral</h1>
-    <p>Solución completa para contadores profesionales</p>
-  </header>
-  
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#características">Características</a>
-    <a href="#precios">Precios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  
-  <section class="hero">
-    <h2>Automatización Contable Inteligente</h2>
-    <p>Gestiona tus clientes, facturación, impuestos y reportes financieros con nuestra plataforma integral</p>
-  </section>
-  
-  <section class="features">
-    <h2>Características Principales</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Facturación Electrónica</h3>
-        <p>Emite facturas electrónicas válidas ante el SAT con validación automática de datos fiscales</p>
-      </div>
-      <div class="feature-card">
-        <h3>Contabilidad Integrada</h3>
-        <p>Registro automático de transacciones, balances generales y estados financieros actualizados</p>
-      </div>
-      <div class="feature-card">
-        <h3>Declaraciones Fiscales</h3>
-        <p>Preparación y envío de declaraciones de impuestos con cálculos automáticos y validaciones</p>
-      </div>
-      <div class="feature-card">
-        <h3>Control de Clientes</h3>
-        <p>Administra la información de múltiples clientes, documentos y fechas de vencimiento</p>
-      </div>
-      <div class="feature-card">
-        <h3>Reportes Personalizados</h3>
-        <p>Genera reportes detallados sobre movimientos, balances y análisis financieros</p>
-      </div>
-      <div class="feature-card">
-        <h3>Seguridad y Copias</h3>
-        <p>Cifrado de datos, copias de seguridad automáticas y cumplimiento normativo</p>
+    <div class="container">
+      <span class="badge">PLAN MAESTRO 2026</span>
+      <h1>PLATAFORMA MÍSTICA - PROYECTO COMPLETO</h1>
+      <p class="subtitle">Un ecosistema digital integral para ventas, automatizaciones, leads, facturación y operaciones diarias con IA local, voz y automatizaciones 100% open source.</p>
+      <div class="owner">
+        <div><strong>Dueño:</strong> Joaquín Suárez</div>
+        <div><strong>Teléfono:</strong> 6623538272</div>
+        <div><strong>Correo:</strong> perrykingla.69@gmail.com</div>
       </div>
     </div>
-  </section>
-  
-  <section class="cta">
-    <h2>Comienza a Simplificar tu Trabajo Contable Hoy</h2>
-    <p>Contacta con nosotros para una demostración personalizada de Mystic</p>
-    <button style="background-color: #e74c3c; color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 1rem;">Solicitar Demo</button>
-  </section>
-  
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Resumen Ejecutivo</h2>
+      <div class="grid">
+        <article class="card"><strong>Dashboard del Dueño</strong><br>Panel completo para control operativo y financiero.</article>
+        <article class="card"><strong>Agente Nexus</strong><br>IA central para atención, recomendaciones y automatización.</article>
+        <article class="card"><strong>Bot Telegram</strong><br>Control total de métricas y acciones desde celular.</article>
+        <article class="card"><strong>Sistema de Leads</strong><br>Objetivo: 20+ leads diarios con seguimiento automático.</article>
+        <article class="card"><strong>Marketplace con IA</strong><br>Generación automática de contenido y catálogo.</article>
+        <article class="card"><strong>Facturación CFDI 4.0</strong><br>Flujo automatizado con conectores libres y sin APIs comerciales de terceros.</article>
+        <article class="card"><strong>Reparaciones de Acordeón</strong><br>Sistema de citas, seguimiento y recordatorios.</article>
+        <article class="card"><strong>Integración de Redes</strong><br>Facebook, Instagram, TikTok, YouTube y WhatsApp.</article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Costos Estimados</h2>
+      <h3>Infraestructura mensual</h3>
+      <table>
+        <thead>
+          <tr><th>Servicio</th><th>Proveedor</th><th>Costo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>VPS 16GB RAM</td><td>Hostinger</td><td>$20-40 USD</td></tr>
+          <tr><td>Dominio</td><td>Namecheap</td><td>$1 USD</td></tr>
+          <tr><td>SSL</td><td>Let's Encrypt</td><td>GRATIS</td></tr>
+          <tr><td>PostgreSQL</td><td>Incluido en VPS</td><td>$0</td></tr>
+          <tr><td>Redis</td><td>Incluido en VPS</td><td>$0</td></tr>
+          <tr><td>Email Marketing</td><td>Mautic + SMTP propio</td><td>$0</td></tr>
+          <tr><td>Mensajería Bot</td><td>Telegram Bot API + gateway OSS</td><td>$0</td></tr>
+          <tr><td>IA local</td><td>Ollama (Llama / Mistral / Qwen)</td><td>$0</td></tr>
+          <tr><td>Almacenamiento</td><td>S3 / Backblaze</td><td>$5 USD</td></tr>
+          <tr><td class="total">TOTAL</td><td></td><td class="total">$26-46 USD / mes</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Costos únicos</h3>
+      <table>
+        <thead><tr><th>Concepto</th><th>Costo</th></tr></thead>
+        <tbody>
+          <tr><td>Dominio .com (1 año)</td><td>$12 USD</td></tr>
+          <tr><td>Configuración inicial</td><td>Tu tiempo</td></tr>
+          <tr><td>Certificado SSL</td><td>GRATIS</td></tr>
+          <tr><td>Plantillas N8N</td><td>GRATIS</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Ingresos potenciales</h3>
+      <ul>
+        <li>Membresías: 100 usuarios × $200 MXN = <strong>$20,000 MXN/mes</strong></li>
+        <li>Tienda: 50 ventas × $500 MXN = <strong>$25,000 MXN/mes</strong></li>
+        <li>Servicios de acordeón: 10 reparaciones × $1,500 = <strong>$15,000 MXN/mes</strong></li>
+      </ul>
+      <div class="kpi">Total potencial mensual: $60,000 MXN</div>
+    </section>
+
+    <section>
+      <h2>Arquitectura del Sistema</h2>
+      <div class="ascii">┌─────────────────────────────────────────────────────────┐
+│                    JOAQUIN'S EMPIRE                     │
+├─────────────────────────────────────────────────────────┤
+│  Telegram   WhatsApp   Email                            │
+│      \         |         /                              │
+│       └────────┴────────┘                               │
+│             AGENTE NEXUS (IA Core)                      │
+│         ┌──────────┼──────────┐                         │
+│       N8N      Dashboard     Content Creator            │
+│         └──────────┼──────────┘                         │
+│               PostgreSQL + Redis                        │
+└─────────────────────────────────────────────────────────┘</div>
+    </section>
+
+    <section>
+      <h2>Correos a Crear</h2>
+      <p><strong>Dominio principal sugerido:</strong> misticservices.com</p>
+      <table>
+        <thead><tr><th>Email</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>joaquin@mysticservices.com</td><td>Personal</td></tr>
+          <tr><td>soporte@mysticservices.com</td><td>Atención a clientes</td></tr>
+          <tr><td>ventas@mysticservices.com</td><td>Cotizaciones</td></tr>
+          <tr><td>sistema@mysticservices.com</td><td>Notificaciones automáticas</td></tr>
+          <tr><td>leads@mysticservices.com</td><td>Prospección</td></tr>
+          <tr><td>facturacion@mysticservices.com</td><td>CFDI automático</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Proveedores recomendados:</strong> Zoho Mail, Google Workspace, Migadu.</p>
+    </section>
+
+    <section>
+      <h2>Flujo de Trabajo Diario Automatizado</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="time">6:30 AM - Reporte matutino</div>
+          <ul>
+            <li>Ventas de ayer</li>
+            <li>Leads nuevos</li>
+            <li>Citas del día</li>
+            <li>Pedidos pendientes y recomendaciones</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="time">Durante el día</div>
+          <ul>
+            <li>Auto-respuestas WhatsApp</li>
+            <li>Leads automáticos y seguimiento</li>
+            <li>Publicaciones programadas</li>
+            <li>Facturación automática</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="time">10:00 PM - Resumen nocturno</div>
+          <ul>
+            <li>Métricas del día</li>
+            <li>Pendientes para mañana</li>
+            <li>Leads priorizados para seguimiento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Asistente de Voz para Bot (Open Source)</h2>
+      <div class="grid">
+        <article class="card"><strong>Modelo de lenguaje</strong><br>Ollama local con modelos open source (Llama 3, Mistral, Qwen) para responder sin APIs de pago.</article>
+        <article class="card"><strong>Entrada de voz (STT)</strong><br>Whisper local (faster-whisper) para transcribir audio de Telegram/WhatsApp a texto.</article>
+        <article class="card"><strong>Salida de voz (TTS)</strong><br>Piper TTS / Coqui TTS para generar respuestas de audio naturales sin servicios externos.</article>
+        <article class="card"><strong>Orquestación</strong><br>N8N + servicios Python/FastAPI para pipeline Audio → Texto → Ollama → Audio.</article>
+      </div>
+      <p class="kpi">Política técnica: sin APIs comerciales de IA ni firmas/documentos de pago; stack completamente open source.</p>
+    </section>
+
+    <section>
+      <h2>Tecnologías a Usar</h2>
+      <table>
+        <thead><tr><th>Función</th><th>Herramienta</th><th>Costo</th></tr></thead>
+        <tbody>
+          <tr><td>Automatización</td><td>N8N</td><td>GRATIS</td></tr>
+          <tr><td>IA Chat</td><td>Ollama (local)</td><td>$0</td></tr>
+          <tr><td>CRM</td><td>SuiteCRM / Mautic</td><td>GRATIS</td></tr>
+          <tr><td>Facturación</td><td>Microservicio CFDI interno (OSS)</td><td>$0</td></tr>
+          <tr><td>WhatsApp/Telegram</td><td>Gateway API libre + Telegram Bot API</td><td>$0</td></tr>
+          <tr><td>Contenido</td><td>Plantillas propias + scripts OSS</td><td>$0</td></tr>
+          <tr><td>Hosting</td><td>Hostinger VPS</td><td>$20-40/mes</td></tr>
+          <tr><td>DB</td><td>PostgreSQL</td><td>GRATIS</td></tr>
+          <tr><td>Caché</td><td>Redis</td><td>GRATIS</td></tr>
+          <tr><td>Email</td><td>Postal/Mailcow + SMTP propio</td><td>$0</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Próximos Pasos</h2>
+      <ul>
+        <li>✅ Crear dashboard del dueño</li>
+        <li>✅ Configurar Agente Nexus</li>
+        <li>✅ Crear bot Telegram</li>
+        <li>✅ Implementar sistema de leads</li>
+        <li>✅ Integrar N8N y WhatsApp</li>
+        <li>✅ Habilitar facturación y comprobación</li>
+        <li>✅ Activar generador de contenido</li>
+        <li>✅ Lanzar app de pagos</li>
+      </ul>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2026 Mystic. Todos los derechos reservados.</p>
-    <p>Diseñado para contadores profesionales</p>
+    Fin del documento de planificación · Plataforma Mística
   </footer>
 </body>
 </html>
