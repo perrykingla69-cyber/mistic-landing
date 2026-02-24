@@ -158,7 +158,7 @@
     <div class="container">
       <span class="badge">PLAN MAESTRO 2026</span>
       <h1>PLATAFORMA MÍSTICA - PROYECTO COMPLETO</h1>
-      <p class="subtitle">Un ecosistema digital integral para ventas, automatizaciones, leads, facturación y operaciones diarias con IA para Mystic Services.</p>
+      <p class="subtitle">Un ecosistema digital integral para ventas, automatizaciones, leads, facturación y operaciones diarias con IA local, voz y automatizaciones 100% open source.</p>
       <div class="owner">
         <div><strong>Dueño:</strong> Joaquín Suárez</div>
         <div><strong>Teléfono:</strong> 6623538272</div>
@@ -176,7 +176,7 @@
         <article class="card"><strong>Bot Telegram</strong><br>Control total de métricas y acciones desde celular.</article>
         <article class="card"><strong>Sistema de Leads</strong><br>Objetivo: 20+ leads diarios con seguimiento automático.</article>
         <article class="card"><strong>Marketplace con IA</strong><br>Generación automática de contenido y catálogo.</article>
-        <article class="card"><strong>Facturación CFDI 4.0</strong><br>Emisión automática integrada al SAT en México.</article>
+        <article class="card"><strong>Facturación CFDI 4.0</strong><br>Flujo automatizado con conectores libres y sin APIs comerciales de terceros.</article>
         <article class="card"><strong>Reparaciones de Acordeón</strong><br>Sistema de citas, seguimiento y recordatorios.</article>
         <article class="card"><strong>Integración de Redes</strong><br>Facebook, Instagram, TikTok, YouTube y WhatsApp.</article>
       </div>
@@ -195,11 +195,11 @@
           <tr><td>SSL</td><td>Let's Encrypt</td><td>GRATIS</td></tr>
           <tr><td>PostgreSQL</td><td>Incluido en VPS</td><td>$0</td></tr>
           <tr><td>Redis</td><td>Incluido en VPS</td><td>$0</td></tr>
-          <tr><td>Email Marketing</td><td>Brevo / SendGrid</td><td>$0-25 USD</td></tr>
-          <tr><td>WhatsApp API</td><td>Twilio / Meta</td><td>$0-15 USD</td></tr>
-          <tr><td>IA API</td><td>OpenAI / HF</td><td>$10-50 USD</td></tr>
+          <tr><td>Email Marketing</td><td>Mautic + SMTP propio</td><td>$0</td></tr>
+          <tr><td>Mensajería Bot</td><td>Telegram Bot API + gateway OSS</td><td>$0</td></tr>
+          <tr><td>IA local</td><td>Ollama (Llama / Mistral / Qwen)</td><td>$0</td></tr>
           <tr><td>Almacenamiento</td><td>S3 / Backblaze</td><td>$5 USD</td></tr>
-          <tr><td class="total">TOTAL</td><td></td><td class="total">$36-130 USD / mes</td></tr>
+          <tr><td class="total">TOTAL</td><td></td><td class="total">$26-46 USD / mes</td></tr>
         </tbody>
       </table>
 
@@ -289,20 +289,31 @@
     </section>
 
     <section>
+      <h2>Asistente de Voz para Bot (Open Source)</h2>
+      <div class="grid">
+        <article class="card"><strong>Modelo de lenguaje</strong><br>Ollama local con modelos open source (Llama 3, Mistral, Qwen) para responder sin APIs de pago.</article>
+        <article class="card"><strong>Entrada de voz (STT)</strong><br>Whisper local (faster-whisper) para transcribir audio de Telegram/WhatsApp a texto.</article>
+        <article class="card"><strong>Salida de voz (TTS)</strong><br>Piper TTS / Coqui TTS para generar respuestas de audio naturales sin servicios externos.</article>
+        <article class="card"><strong>Orquestación</strong><br>N8N + servicios Python/FastAPI para pipeline Audio → Texto → Ollama → Audio.</article>
+      </div>
+      <p class="kpi">Política técnica: sin APIs comerciales de IA ni firmas/documentos de pago; stack completamente open source.</p>
+    </section>
+
+    <section>
       <h2>Tecnologías a Usar</h2>
       <table>
         <thead><tr><th>Función</th><th>Herramienta</th><th>Costo</th></tr></thead>
         <tbody>
           <tr><td>Automatización</td><td>N8N</td><td>GRATIS</td></tr>
-          <tr><td>IA Chat</td><td>OpenAI / Ollama</td><td>$0-50/mes</td></tr>
+          <tr><td>IA Chat</td><td>Ollama (local)</td><td>$0</td></tr>
           <tr><td>CRM</td><td>SuiteCRM / Mautic</td><td>GRATIS</td></tr>
-          <tr><td>Facturación</td><td>FacturAPI</td><td>$199 MXN/mes</td></tr>
-          <tr><td>WhatsApp</td><td>Twilio / Meta</td><td>$0.005/msg</td></tr>
-          <tr><td>Contenido</td><td>Canvas OS / Canva</td><td>$0-15/mes</td></tr>
+          <tr><td>Facturación</td><td>Microservicio CFDI interno (OSS)</td><td>$0</td></tr>
+          <tr><td>WhatsApp/Telegram</td><td>Gateway API libre + Telegram Bot API</td><td>$0</td></tr>
+          <tr><td>Contenido</td><td>Plantillas propias + scripts OSS</td><td>$0</td></tr>
           <tr><td>Hosting</td><td>Hostinger VPS</td><td>$20-40/mes</td></tr>
           <tr><td>DB</td><td>PostgreSQL</td><td>GRATIS</td></tr>
           <tr><td>Caché</td><td>Redis</td><td>GRATIS</td></tr>
-          <tr><td>Email</td><td>Brevo</td><td>GRATIS (300/día)</td></tr>
+          <tr><td>Email</td><td>Postal/Mailcow + SMTP propio</td><td>$0</td></tr>
         </tbody>
       </table>
     </section>
