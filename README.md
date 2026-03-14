@@ -331,3 +331,20 @@ curl -I https://sonoradigitalcorp.com
 curl -I https://www.sonoradigitalcorp.com
 curl -I https://sonoradigitalcorp.com/modulos/
 ```
+
+
+## Descargar todo el proyecto en un archivo
+
+Puedes generar un paquete descargable del proyecto completo (con carpetas) en formato `.zip` y `.tar.gz`:
+
+```bash
+bash scripts/export_project.sh
+```
+
+Opcional: indicar carpeta de salida personalizada.
+
+```bash
+bash scripts/export_project.sh /ruta/de/salida
+```
+
+El script crea los archivos dentro de `dist/` por defecto y excluye `.git`, `.env`, `node_modules`, `dist` y logs.
