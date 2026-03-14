@@ -2,6 +2,16 @@
 
 Landing page estática de Mystic con un área privada de módulos PDF.
 
+## Dirección estratégica (recomendada)
+
+Para no perder el hilo entre marca y producto:
+
+- `sonoradigitalcorp.com` = marca/empresa (repo `sonora-digital-corp`).
+- `mystic.sonoradigitalcorp.com` = producto Mystic (este repo).
+
+Guía completa de estrategia y operación en: `docs/ESTRATEGIA_SONORA_MYSTIC.md`.
+Templates de Nginx listos en: `infra/nginx/sonora.conf` y `infra/nginx/mystic.conf`.
+
 ## Estructura
 
 - `index.html`: página pública principal.
